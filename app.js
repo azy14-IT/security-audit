@@ -1,3 +1,4 @@
+
 const domains = {
     "Physical Security": [
         "Is office access controlled via biometric/card?",
@@ -271,15 +272,23 @@ function saveData() {
     const data = [];
 
     rows.forEach(r => {
+        const status = r.children[2].children[0].value;
+        const riskCell = r.children[3];
+
+        // update risk live
+        const risk = riskFromStatus(status);
+        riskCell.textContent = risk;
+        riskCell.className = "risk-" + risk;
+
         data.push({
-            status: r.children[2].children[0].value,
+            status: status,
             note: r.children[4].children[0].value
         });
     });
 
     localStorage.setItem(domain, JSON.stringify(data));
-    loadChecklist();
 }
+
 
 function exportExcel() {
     let csv = "Domain,Question,Status,Risk,Notes\n";
