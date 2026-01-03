@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WBC - Organization Security Audit</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Company name large and sky-dark-blue, header styling */
+        .site-header {
+            text-align: center;
+            margin: 24px 0;
+        }
+        .company-name {
+            font-weight: 800;
+            font-size: 2.5rem; /* big font for company name */
+            color: #0b5ea8;    /* sky dark blue */
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .site-header h1 {
+            font-size: 1.4rem; /* medium font for the audit title */
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="company-name">WBC</div>
+    <h1>Organization Security Audit Checklist</h1>
+</header>
+
+
+<div class="top-bar">
+    <select id="domainSelect" onchange="loadChecklist()"></select>
+    <button onclick="exportExcel()">Export to Excel</button>
+    <button onclick="window.print()">Print</button>
+</div>
+
+<table id="checklistTable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Audit Question</th>
+            <th>Status</th>
+            <th>Risk</th>
+            <th>Evidence / Notes</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script src="app.js"></script>
+</body>
+</html>
+// ...existing code...

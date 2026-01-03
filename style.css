@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f4f6f8;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.top-bar {
+    margin-bottom: 15px;
+}
+
+select, button {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+th {
+    background: #1e40af;
+    color: white;
+}
+
+.risk-High {
+    background: #fecaca;
+}
+.risk-Medium {
+    background: #fde68a;
+}
+.risk-Low {
+    background: #bbf7d0;
+}
+
+@media print {
+    button, select {
+        display: none;
+    }
+    body {
+        background: white;
+    }
+}
